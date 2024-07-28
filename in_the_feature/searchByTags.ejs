@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        <% if (checkedValues && checkedValues.length > 0) { %>
+            <% checkedValues.forEach(value => { %>
+                <li><%= value %></li>
+            <% }); %>
+        <% } else { %>
+            <p>No tags selected.</p>
+        <% } %>
+    </ul>
+    <a href="/">Go back</a>
+    <script>
+        app.post('/searchByTags', (req, res) => {
+        console.log('Request method:', req.method);
+        console.log('Request body:', req.body);
+        const checkedValues = req.body.checkedValues;
+        res.render('searchByTags', { checkedValues });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security"
+  },
+  "name": "quotation-book",
+  "version": "1.0.0",
+  "description": "This project is intended for those who want to share their quote or find the quote they need.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "quo."
+  },
+  "keywords": [
+    "qoute",
+    "qoutation",
+    "book",
+    "qoutation-book"
+  ],
+  "author": "bnarulan",
+  "license": "ISC"
+}
