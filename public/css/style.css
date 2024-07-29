@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
   font-size: 16px; /* 1rem = 16px */
   --textColor: #fff;
@@ -9,8 +9,9 @@
   --borderBottomHeader: #ff5931 0.3vh solid;
   --bgColorBtn: #ff5931;
   --tagBorder: 0.0625rem solid #c9c9c9; /* 1px */
-  --tagChecked: #ce3812;
+  --tagChecked: #ff4b1f;
   --cardColor: #202020;
+  --btnHover: #ff4b1f 0.03125rem solid;
 }
 
 * {
@@ -71,6 +72,9 @@ header .btnAdd:hover {
 }
 
 .tags_side {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,6 +123,11 @@ header .btnAdd:hover {
   background: var(--tagChecked);
 }
 
+.tags_search {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
 .searchBtn {
   padding: 0.625rem 1.25rem; /* 10px 20px */
   border-radius: 0.625rem; /* 10px */
@@ -126,36 +135,151 @@ header .btnAdd:hover {
   border: 0px;
   cursor: pointer;
   transition: 300ms;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem; /* 20px */
+  color: var(--textColor);
 }
 
 .searchBtn:hover {
-  transform: scale(1.05);
+  border: var(--btnHover);
+  background-color: transparent;
 }
 
 .main__ {
-  padding: 0 10%;
-  display: flex;
-  height: 100%;
-  gap: 1.875rem; /* 30px */
-}
-
-.card-top-quote {
-  color: var(--textColor);
-  font-family: "Raleway", sans-serif;
-  text-align: center;
-  width: 35%;
-  min-height: 25rem; /* 400px */
-  margin: 1.875rem 0; /* 30px */
-  border: 0.0625rem solid var(--cardColor); /* 1px */
-  padding: 1.25rem; /* 20px */
-  border-radius: 0.625rem; /* 10px */
-  background-color: var(--cardColor);
-}
-
-.card-top-quote .content {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem; /* 24px */
-  height: 70%;
-}
+    padding: 0 10%;
+    display: flex;
+    gap: 1.875rem; /* 30px */
+    align-items: flex-start;
+  }
+  
+  .card-quote {
+    color: var(--textColor);
+    font-family: "Raleway", sans-serif;
+    width: 550px;
+    margin: 1.875rem 0; /* 30px */
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.625rem; /* 10px */
+    background-color: var(--cardColor);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  
+  .card-quote .title {
+    font-size: 1.875rem; /* 30px */
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 1rem; /* Add margin for separation */
+  }
+  
+  .card-quote .content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: top;
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.5;
+    text-align: left;
+    margin-left: 0.625rem; /* 10px */
+  }
+  
+  .quotation_marks {
+    font-size: 2.5rem; /* 40px */
+    margin: 0 0.625rem; /* 10px */
+    font-family: 'Coustard', serif;
+    line-height: 1; /* Adjusted line-height for better positioning */
+  }
+  
+  .down {
+    transform: rotate(180deg);
+    transform-origin: left;
+  }
+  
+  .card-quote .content .right {
+    align-items: end;
+    justify-content: end;
+    display: flex;
+  }
+  
+  .card-quote .content .left {
+    align-items: start;
+    justify-content: start;
+    display: flex;
+  }
+  
+  .card-quote .content .text {
+    margin: 0; /* Removed additional margins */
+    padding: 0 1.25rem; /* 20px for padding inside the content */
+  }
+  
+  .card-quote .footer {
+    margin-top: 1rem; /* Add margin to separate from content */
+    text-align: left; /* Align text to the right */
+    font-size: 1rem; /* Smaller font for the footer */
+    flex-shrink: 0; /* Ensure footer stays at the bottom */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .like_place {
+    display: flex;
+    align-items: center;
+  }
+  
+  .like_place img {
+    width: 1.875rem; /* 30px */
+    height: 1.875rem; /* 30px */
+    cursor: pointer;
+  }
+  
+  .like_place span {
+    margin-left: 0.625rem; /* 10px */
+    font-size: 1rem; /* 16px */
+    font-family: "Raleway", sans-serif;
+    color: var(--textColor);
+  }
+  @media (max-width: 768px) {
+    .main__ {
+      flex-direction: column; /* Вертикальное расположение карточек */
+      padding: 0 5%; /* Уменьшить отступы */
+    }
+  
+    .card-quote {
+      width: 100%; /* Занимать всю ширину экрана */
+      margin: 1rem 0; /* Уменьшить внешние отступы */
+    }
+  
+    .tags_side {
+      width: 100%; /* Занимать всю ширину экрана */
+      margin: 1rem 0; /* Уменьшить внешние отступы */
+    }
+  
+    .tags {
+      grid-template-columns: repeat(1, 1fr); /* Один столбец */
+      grid-template-rows: auto; /* Автоматическая высота строк */
+      gap: 0.625rem; /* 10px - Отступы между тегами */
+      width: 100%; /* Занимать всю ширину контейнера */
+      padding: 0 1rem; /* Отступы внутри контейнера */
+    }
+  
+    .tags span {
+      width: 100%; /* Занимать всю ширину строки */
+      text-align: center; /* Центрировать текст */
+      padding: 0.625rem; /* Увеличить внутренние отступы */
+    }
+  
+    .tags input[type="checkbox"]:checked + span {
+      background: var(--tagChecked);
+    }
+  
+    .tags_search {
+      justify-content: center; /* Центрировать кнопку поиска */
+      padding: 1rem 0; /* Добавить отступы */
+    }
+  
+    .searchBtn {
+      width: 100%; /* Занимать всю ширину контейнера */
+    }
+  }
+  

@@ -10,33 +10,43 @@
     <%- include ('blocks/header') -%>
     <main>
         <section class="main__">
+            <div class="card-quote">
+              <p class="title">The best quote of the day</p>
+              <div class="content">
+                <div class="right"><span class="quotation_marks up">"</span></div>
+                <span class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, sit asperiores impedit enim omnis minima assumenda numquam et vitae dolores.</span>
+                <div class="left"><span class="quotation_marks down">"</span></div>
+              </div>
+              <div class="footer">
+                <div class="like_place">
+                  <img src="/img/like.svg" alt="like">
+                  <span>5</span>
+                </div>
+                <span>- John Doe</span>
+              </div>
+            </div>
+            <div class="card-quote">
+              <p class="title">Random quote</p>
+              <div class="content">
+                <div class="right"><span class="quotation_marks up">"</span></div>
+                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem explicabo fugit natus illum numquam veniam!
+                </span>
+                <div class="left"><span class="quotation_marks down">"</span></div>
+              </div>
+              <div class="footer">
+                <div class="like_place">
+                  <img src="/img/like.svg" alt="like">
+                  <span>5</span>
+                </div>
+                <span>- John Doe</span>
+              </div>
+            </div>
             <div class="tags_side">
-                <p>Search by tags</p>
-                    <%- include ('blocks/tags') -%>
+              <p>Search by tags</p>
+              <%- include('blocks/tags') -%>
             </div>
-            <div class="card-top-quote">
-                <p class="header-top top-quote">The best quote of the day</p>
-                <div class="content">
-                    <span>"</span>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur assumenda voluptatibus, qui ipsa accusamus a accusantium architecto odio ex quam.</span>
-                    <span>"</span>
-                </div>
-                <div class="footer">
-                    <span>- John Doe</span>
-                </div>
-            </div>
-            <div class="card-top-quote">
-                <p class="header-top top-quote">The best quote of the day</p>
-                <div class="content">
-                    <span>"</span>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur assumenda voluptatibus, qui ipsa accusamus a accusantium architecto odio ex quam.</span>
-                    <span>"</span>
-                </div>
-                <div class="footer">
-                    <span>- John Doe</span>
-                </div>
-            </div>
-        </section>
+          </section>
+          
         <section></section>
     </main>
     <script src="/public/js/script.js">
