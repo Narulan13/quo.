@@ -9,10 +9,20 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
+const quotes = require('./public/records/quotes.json'); 
+const bestQuotesByLikes = quotes.sort((a, b) => b.likes - a.likes);
+const topQuote = bestQuotesByLikes[0];
 
+app.get('/', (req, res) => {
+    const randQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    res.render('index', { topQuote: topQuote,  randQuote: randQuote });
+});
+app.post('/searchByTags', (req, res) => {
+    console.log('Request method:', req.method);
+    console.log('Request body:', req.body);
+    const checkedValues = req.body.checkedValues;
+    res.render('searchByTags', { checkedValues });
+});
 
 
 app.listen(1000, () => {

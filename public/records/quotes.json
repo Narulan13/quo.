@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela",
+    "likes": "100011",
+    "likesForThisDay": "85",
+    "tags": ["Humor", "Phylosophy"]
+  },
+  {
+    "id": "2",
+    "quote": "The gatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela",
+    "likes": "100200",
+    "likesForThisDay": "85",
+    "tags": ["Humor", "Phylosophy"]
+  },
+  {
+    "id": "3",
+    "quote": "The greest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela",
+    "likes": "0",
+    "likesForThisDay": "85",
+    "tags": ["Humor", "Phylosophy"]
+  },
+  {
+    "id": "4",
+    "quote": "he greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela",
+    "likes": "1200",
+    "likesForThisDay": "85",
+    "tags": ["Humor", "Phylosophy"]
+  },
+  {
+    "id": "5",
+    "quote": "Th greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela",
+    "likes": "11000",
+    "likesForThisDay": "85",
+    "tags": ["Humor", "Phylosophy"]
+  }
+]

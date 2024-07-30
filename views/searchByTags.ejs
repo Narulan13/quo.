@@ -17,12 +17,6 @@
     </ul>
     <a href="/">Go back</a>
     <script>
-        app.post('/searchByTags', (req, res) => {
-        console.log('Request method:', req.method);
-        console.log('Request body:', req.body);
-        const checkedValues = req.body.checkedValues;
-        res.render('searchByTags', { checkedValues });
-        });
     </script>
 </body>
 </html>
