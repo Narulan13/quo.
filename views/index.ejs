@@ -1,54 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <%- include ('blocks/head')%>
     <title>Quo</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+  </head>
+  <body>
     <%- include ('blocks/header') -%>
     <main>
-        <section class="main__">
-            <div class="card-quote">
-              <p class="title">The best quote of the day</p>
-              <div class="content">
-                <div class="right"><span class="quotation_marks up">"</span></div>
-                <span class="text"><%= topQuote.quote %></span>
-                <div class="left"><span class="quotation_marks down">"</span></div>
+      <section class="main__">
+        <div class="card-quote">
+          <p class="title">The best quote of the day</p>
+          <div class="content">
+            <% if (!topQuote) { %>
+            <span class="text">No quotes found</span>
+            <% } else {%>
+            <div class="right"><span class="quotation_marks up">"</span></div>
+            <span class="text"><%= topQuote.quote %></span>
+            <div class="left"><span class="quotation_marks down">"</span></div>
+            <% } %>
+          </div>
+          <% if(topQuote) {%>
+          <div class="footer">
+            <div class="left_footer">
+              <div
+                class="like_place"
+                onclick="likeQuote('<%= topQuote.id %>', 'likes-<%= topQuote.id %>')"
+              >
+                <img
+                  src="<%= likedQuotes.includes(topQuote.id) ? '/img/liked.svg' : '/img/unliked.svg' %>"
+                  id="likesImg-<%= topQuote.id %>"
+                  alt="like"
+                />
+                <span id="likes-<%= topQuote.id %>" class="likes"
+                  ><%= topQuote.likes %></span
+                >
               </div>
-              <div class="footer">
-                <div class="like_place">
-                  <img src="/img/like.svg" alt="like">
-                  <span><%= topQuote.likes %></span>
-                </div>
-                <span>- <%= topQuote.author %></span>
+              <div class="info_icon">
+                <img
+                  onclick="window.location.href='/quote/<%= topQuote.id %>'"
+                  src="/img/info.svg"
+                  class="info_icon"
+                  alt="info"
+                />
               </div>
             </div>
-            <div class="card-quote">
-              <p class="title">Random quote</p>
-              <div class="content">
-                <div class="right"><span class="quotation_marks up">"</span></div>
-                <span class="text"><%= randQuote.quote  %> </span>
-                <div class="left"><span class="quotation_marks down">"</span></div>
+            <span>- <%= topQuote.author %></span>
+          </div>
+          <% } %>
+        </div>
+
+        <div class="card-quote">
+          <p class="title">Random quote</p>
+          <div class="content">
+            <% if (randQuote) { %>
+            <div class="right"><span class="quotation_marks up">"</span></div>
+            <span class="text"><%= randQuote.quote %> </span>
+            <div class="left"><span class="quotation_marks down">"</span></div>
+            <% } else {%>
+            <span class="text">No quotes found</span>
+            <% } %>
+          </div>
+          <% if (randQuote) { %>
+          <div class="footer">
+            <div class="left_footer">
+              <div
+                class="like_place"
+                onclick="likeQuote('<%= randQuote.id %>', 'likes-<%= randQuote.id %>')"
+              >
+                <img
+                  src="<%= likedQuotes.includes(randQuote.id) ? '/img/liked.svg' : '/img/unliked.svg' %>"
+                  id="likesImg-<%= randQuote.id %>"
+                  class="like"
+                  alt="like"
+                />
+                <span id="likes-<%= randQuote.id %>" class="likes"
+                  ><%= randQuote.likes %></span
+                >
               </div>
-              <div class="footer">
-                <div class="like_place">
-                  <img src="/img/like.svg" alt="like">
-                  <span><%= randQuote.likes %></span>
-                </div>
-                <span>- <%= randQuote.author %></span>
+              <div class="info_icon">
+                <img
+                  onclick="window.location.href='/quote/<%= randQuote.id %>'"
+                  src="/img/info.svg"
+                  class="info_icon"
+                  alt="info"
+                />
               </div>
             </div>
-            <div class="tags_side">
-              <p>Search by tags</p>
-              <%- include('blocks/tags') -%>
-            </div>
-          </section>
-          
-        <section></section>
+            <span>- <%= randQuote.author %></span>
+          </div>
+          <% } %>
+        </div>
+
+        <div class="tags_side">
+          <p>Search by tags</p>
+          <%- include('blocks/tags') -%>
+        </div>
+      </section>
+
+      <section></section>
     </main>
-    <script src="/js/script.js">
+    <script src="/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const likedQuotes = getLikedQuotes();
+        likedQuotes.forEach((id) => {
+          const img = document.querySelector(`#likesImg-${id}`);
+          if (img) {
+            img.src = "/img/liked.svg";
+          }
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

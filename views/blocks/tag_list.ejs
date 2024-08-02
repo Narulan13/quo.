@@ -1,0 +1,9 @@
+<ul class="tag_list">
+    <% if (checkedValues && checkedValues.length > 0) { %>
+        <% checkedValues.forEach(tag => { %>
+            <li class="tag_element"><%= tag %></li>
+        <% }); %>
+    <% } else { %>
+        <p>No tags selected.</p>
+    <% } %>
+</ul>

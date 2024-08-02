@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   font-size: 16px; /* 1rem = 16px */
   --textColor: #fff;
@@ -11,6 +11,7 @@
   --tagBorder: 0.0625rem solid #c9c9c9; /* 1px */
   --tagChecked: #ff4b1f;
   --cardColor: #202020;
+  --secCardColor: #141414;
   --btnHover: #ff4b1f 0.03125rem solid;
 }
 
@@ -26,6 +27,10 @@ a {
 
 body {
   background-color: var(--bgColorBody);
+}
+
+ul li {
+  list-style-type: none;
 }
 
 header {
@@ -50,7 +55,11 @@ header .title:hover {
   color: var(--secTextColor);
   transform: scale(0.9);
 }
-
+header .btn_side{
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}
 header .btnAdd {
   padding: 0.3125rem 0.625rem; /* 5px 10px */
   border-radius: 0.625rem; /* 10px */
@@ -66,7 +75,10 @@ header .add-story {
   color: var(--textColor);
   transition: 300ms;
 }
-
+header .mode {
+  width: 1.875rem; /* 30px */;
+  cursor: pointer;
+}
 header .btnAdd:hover {
   transform: scale(1.05);
 }
@@ -92,8 +104,8 @@ header .btnAdd:hover {
 .tags {
   margin: 1.5625rem 0; /* 25px */
   display: grid;
-  grid-template-columns: repeat(2, 11.875rem); /* 190px */
-  grid-template-rows: repeat(8, 2.1875rem); /* 35px */
+  grid-template-columns: repeat(2, 1fr); /* 190px */
+  grid-template-rows: repeat(8, 1fr); /* 35px */
   gap: 0.625rem; /* 10px */
   user-select: none;
   font-family: "Raleway", sans-serif;
@@ -146,140 +158,382 @@ header .btnAdd:hover {
 }
 
 .main__ {
-    padding: 0 10%;
-    display: flex;
-    gap: 1.875rem; /* 30px */
-    align-items: flex-start;
+  padding: 0 10%;
+  display: flex;
+  gap: 1.875rem; /* 30px */
+  align-items: flex-start;
+}
+
+.card-quote {
+  color: var(--textColor);
+  font-family: "Raleway", sans-serif;
+  width: 550px;
+  margin: 1.875rem 0; /* 30px */
+  padding: 1.25rem; /* 20px */
+  border-radius: 0.625rem; /* 10px */
+  background-color: var(--cardColor);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.card-quote .title {
+  font-size: 1.875rem; /* 30px */
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 1rem; /* Add margin for separation */
+}
+
+.card-quote .content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: top;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.5;
+  text-align: left;
+}
+
+.quotation_marks {
+  font-size: 2.5rem; /* 40px */
+  font-family: "Coustard", serif;
+  line-height: 1; /* Adjusted line-height for better positioning */
+}
+
+.down {
+  transform: rotate(180deg);
+}
+
+.right {
+  align-items: end;
+  justify-content: end;
+  display: flex;
+}
+
+.left {
+  align-items: start;
+  justify-content: start;
+  display: flex;
+}
+
+.card-quote .content .text {
+  margin: 0; /* Removed additional margins */
+  padding: 0 1.25rem; /* 20px for padding inside the content */
+}
+
+.card-quote .footer {
+  margin-top: 1rem; /* Add margin to separate from content */
+  text-align: left; /* Align text to the right */
+  font-size: 1rem; /* Smaller font for the footer */
+  flex-shrink: 0; /* Ensure footer stays at the bottom */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-quote .footer .left_footer .info_icon {
+  margin-left: 0.625rem; /* 10px */
+}
+.like_place {
+  display: flex;
+  align-items: center;
+}
+
+.like_place img {
+  width: 1.875rem; /* 30px */
+  height: 1.875rem; /* 30px */
+  cursor: pointer;
+}
+.like_place img.liked {
+  transform: scale(1.2);
+  pointer-events: none; /* Отключение повторного нажатия */
+}
+.like_place span {
+  margin-left: 0.625rem; /* 10px */
+  font-size: 1rem; /* 16px */
+  font-family: "Raleway", sans-serif;
+  color: var(--textColor);
+}
+.tag_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 0.625rem; /* 10px */
+}
+.tag_element {
+  display: flex;
+  background-color: var(--bgColorBtn);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  padding: 10px;
+}
+.quotes_list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.875rem; /* 30px */
+  color: var(--textColor);
+  gap: 1.25rem;
+}
+.card_search {
+  display: flex;
+}
+.card_quote {
+  padding: 0.625rem;
+  background-color: var(--secCardColor);
+  width: 100%;
+  display: flex;
+  color: var(--textColor);
+  font-family: "Raleway", sans-serif;
+  border-radius: 0.625rem;
+}
+.card_quote .content_search {
+  padding: 0 0.625rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 50%;
+}
+.card_quote .info_search {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 0.625rem;
+  align-items: end;
+  flex-direction: column-reverse;
+  gap: 0.625rem;
+}
+.card_quote .info_search .like {
+  align-items: center;
+  display: flex;
+}
+.card_quote .info_search .like img {
+  width: 1.875rem; /* 30px */
+  cursor: pointer;
+}
+.card_quote .quote {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.info_icon img {
+  width: 1.875rem; /* 30px */
+  cursor: pointer;
+}
+.listEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textColor);
+}
+.card__ {
+  width: 40%;
+  color: var(--textColor);
+  font-family: "Raleway", sans-serif;
+  padding: 1.25rem; /* 20px */
+  border-radius: 0.625rem; /* 10px */
+  background-color: var(--cardColor);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.info_card {
+  width: 60%;
+  color: var(--textColor);
+  font-family: "Raleway", sans-serif;
+  padding: 1.25rem; /* 20px */
+  border-radius: 0.625rem; /* 10px */
+  background-color: var(--cardColor);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  gap: 1.25rem;
+  font-size: 1.25rem; /* 20px */
+}
+.info_card img {
+  width: 1.875rem; /* 30px */
+  cursor: pointer;
+}
+.info_card .like {
+  display: flex;
+  align-items: center;
+}
+.info_card .like span {
+  margin-left: 0.3125rem;
+}
+.card__ .title {
+  font-size: 1.875rem; /* 30px */
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 1rem; /* Add margin for separation */
+}
+.card__ .content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: top;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.5;
+  text-align: left;
+}
+.card__ .content .text {
+  margin: 0; /* Removed additional margins */
+  padding: 0 1.25rem; /* 20px for padding inside the content */
+}
+.container {
+  font-family: "Raleway", sans-serif;
+  margin: 1.875rem 0; /* 30px */
+  padding: 1.25rem; /* 20px */
+  border-radius: 0.625rem;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  gap: 1.25rem;
+}
+.left_footer {
+  display: flex;
+}
+.btnAdd {
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border-radius: 0.625rem; /* 10px */
+  background-color: var(--bgColorBtn);
+  border: 0px;
+  cursor: pointer;
+  transition: 300ms;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem; /* 20px */
+  color: var(--textColor);
+}
+.btnAdd:hover {
+  transform: translateY(-5px);
+}
+textarea{
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border-radius: 0.625rem; /* 10px */
+  background-color: var(--secCardColor);
+  border: 0px;
+  cursor: pointer;
+  transition: 300ms;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem; /* 20px */
+  color: var(--textColor);
+  outline: none;
+  width: 100%;
+  height: 100%;
+  resize: vertical;
+  height: 12.5rem;
+  min-height: 3.75rem;
+  height: 3.75rem;
+}
+.container_ {
+  display: flex;
+  flex-direction: row;
+  color: var(--textColor);
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  margin: 1.875rem 0; /* 30px */
+  padding: 1.25rem; /* 20px */
+  border-radius: 0.625rem; /* 10px */
+  background-color: var(--cardColor);
+  flex-grow: 1;
+  flex-shrink: 1;
+  gap: 1.25rem;
+}
+.container_ .card-quote__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  gap: 1.25rem;
+  width: 50%;
+}
+.container_ .card-quote__img {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container_ .card-quote__img img {
+  width: 37.5rem;
+  height: 37.5rem;
+  border-radius: 0.625rem; /* 10px */
+}
+.grid_tags{
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 11.875rem); /* 190px */
+  grid-template-rows: repeat(8, 1.875rem); /* 35px */
+  gap: 0.625rem; /* 10px */
+  user-select: none;
+  font-family: "Raleway", sans-serif;
+}
+.add_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.card-quote__title {
+  font-size: 1.875rem; /* 30px */
+  font-family: "Raleway", sans-serif;
+}
+.card-quote__title_ {
+  font-size: 1.25rem; /* 30px */
+  font-family: "Raleway", sans-serif;
+}
+@media (max-width: 768px) {
+  .main__ {
+    flex-direction: column; /* Вертикальное расположение карточек */
+    padding: 0 5%; /* Уменьшить отступы */
   }
-  
+
   .card-quote {
-    color: var(--textColor);
-    font-family: "Raleway", sans-serif;
-    width: 550px;
-    margin: 1.875rem 0; /* 30px */
-    padding: 1.25rem; /* 20px */
-    border-radius: 0.625rem; /* 10px */
-    background-color: var(--cardColor);
-    display: flex;
+    width: 100%; /* Занимать всю ширину экрана */
+    margin: 1rem 0; /* Уменьшить внешние отступы */
+  }
+
+  .tags_side {
+    width: 100%; /* Занимать всю ширину экрана */
+    margin: 1rem 0; /* Уменьшить внешние отступы */
+  }
+
+  .tags {
+    grid-template-columns: repeat(1, 1fr); /* Один столбец */
+    grid-template-rows: auto; /* Автоматическая высота строк */
+    gap: 0.625rem; /* 10px - Отступы между тегами */
+    width: 100%; /* Занимать всю ширину контейнера */
+    padding: 0 1rem; /* Отступы внутри контейнера */
+  }
+
+  .tags span {
+    width: 100%; /* Занимать всю ширину строки */
+    text-align: center; /* Центрировать текст */
+    padding: 0.625rem; /* Увеличить внутренние отступы */
+  }
+
+  .tags input[type="checkbox"]:checked + span {
+    background: var(--tagChecked);
+  }
+
+  .tags_search {
+    justify-content: center; /* Центрировать кнопку поиска */
+    padding: 1rem 0; /* Добавить отступы */
+  }
+
+  .searchBtn {
+    width: 100%; /* Занимать всю ширину контейнера */
+  }
+  .card_quote {
     flex-direction: column;
-    flex-grow: 1;
-    flex-shrink: 1;
   }
-  
-  .card-quote .title {
-    font-size: 1.875rem; /* 30px */
-    font-family: "Raleway", sans-serif;
-    margin-bottom: 1rem; /* Add margin for separation */
+  .card_quote .content_search {
+    width: 100%;
   }
-  
-  .card-quote .content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: top;
-    font-size: 1.5rem; /* 24px */
-    line-height: 1.5;
-    text-align: left;
-    margin-left: 0.625rem; /* 10px */
+  .card_quote .info_search {
+    width: 100%;
   }
-  
-  .quotation_marks {
-    font-size: 2.5rem; /* 40px */
-    margin: 0 0.625rem; /* 10px */
-    font-family: 'Coustard', serif;
-    line-height: 1; /* Adjusted line-height for better positioning */
-  }
-  
-  .down {
-    transform: rotate(180deg);
-    transform-origin: left;
-  }
-  
-  .card-quote .content .right {
-    align-items: end;
-    justify-content: end;
-    display: flex;
-  }
-  
-  .card-quote .content .left {
-    align-items: start;
-    justify-content: start;
-    display: flex;
-  }
-  
-  .card-quote .content .text {
-    margin: 0; /* Removed additional margins */
-    padding: 0 1.25rem; /* 20px for padding inside the content */
-  }
-  
-  .card-quote .footer {
-    margin-top: 1rem; /* Add margin to separate from content */
-    text-align: left; /* Align text to the right */
-    font-size: 1rem; /* Smaller font for the footer */
-    flex-shrink: 0; /* Ensure footer stays at the bottom */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .like_place {
-    display: flex;
-    align-items: center;
-  }
-  
-  .like_place img {
-    width: 1.875rem; /* 30px */
-    height: 1.875rem; /* 30px */
-    cursor: pointer;
-  }
-  
-  .like_place span {
-    margin-left: 0.625rem; /* 10px */
-    font-size: 1rem; /* 16px */
-    font-family: "Raleway", sans-serif;
-    color: var(--textColor);
-  }
-  @media (max-width: 768px) {
-    .main__ {
-      flex-direction: column; /* Вертикальное расположение карточек */
-      padding: 0 5%; /* Уменьшить отступы */
-    }
-  
-    .card-quote {
-      width: 100%; /* Занимать всю ширину экрана */
-      margin: 1rem 0; /* Уменьшить внешние отступы */
-    }
-  
-    .tags_side {
-      width: 100%; /* Занимать всю ширину экрана */
-      margin: 1rem 0; /* Уменьшить внешние отступы */
-    }
-  
-    .tags {
-      grid-template-columns: repeat(1, 1fr); /* Один столбец */
-      grid-template-rows: auto; /* Автоматическая высота строк */
-      gap: 0.625rem; /* 10px - Отступы между тегами */
-      width: 100%; /* Занимать всю ширину контейнера */
-      padding: 0 1rem; /* Отступы внутри контейнера */
-    }
-  
-    .tags span {
-      width: 100%; /* Занимать всю ширину строки */
-      text-align: center; /* Центрировать текст */
-      padding: 0.625rem; /* Увеличить внутренние отступы */
-    }
-  
-    .tags input[type="checkbox"]:checked + span {
-      background: var(--tagChecked);
-    }
-  
-    .tags_search {
-      justify-content: center; /* Центрировать кнопку поиска */
-      padding: 1rem 0; /* Добавить отступы */
-    }
-  
-    .searchBtn {
-      width: 100%; /* Занимать всю ширину контейнера */
-    }
-  }
-  
+}

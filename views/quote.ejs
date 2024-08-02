@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('blocks/head')%>
+    <title>Quote</title>
+  </head>
+  <body>
+    <%- include('blocks/header')%>
+
+    <div class="main__">
+      <div class="container main__">
+        <div class="card__">
+          <p class="title">Quote</p>
+          <div class="content">
+            <div class="right"><span class="quotation_marks up">"</span></div>
+            <span class="text"><%= quote.quote %></span>
+            <div class="left"><span class="quotation_marks down">"</span></div>
+          </div>
+        </div>
+        <div class="info_card">
+          <span>Date: <%= quote.date.split("T")[0]  %> <%= quote.date.split("T")[1].split(".")[0]%></span>
+          <span>Author: <%= quote.author %></span>
+          <div class="tag_list">
+            <% if(quote.tags.includes(null)){%>
+            <span class="tag_element">No tags selected</span>
+            <%}else{%>
+            <% quote.tags.forEach(tag => { %>
+            <span class="tag_element"><%= tag %></span>
+            <% }); }%>
+          </div>
+          <div
+            class="like"
+            onclick="likeQuote('<%= quote.id %>', 'likes-<%= quote.id %>')"
+          >
+            <img
+              src="<%= likedQuotes.includes(quote.id) ? '/img/liked.svg' : '/img/unliked.svg' %>"
+              id="likesImg-<%= quote.id %>"
+              class="like"
+              alt="like"
+            />
+            <span id="likes-<%= quote.id %>" class="likes"
+              ><%= quote.likes %></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const likedQuotes = getLikedQuotes();
+        likedQuotes.forEach((id) => {
+          const img = document.querySelector(`#likesImg-${id}`);
+          if (img) {
+            img.src = "/img/liked.svg";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

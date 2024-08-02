@@ -1,22 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <%- include ('blocks/head')%>
     <title>Search Results</title>
-</head>
-<body>
-    <h1>Search Results</h1>
-    <ul>
-        <% if (checkedValues && checkedValues.length > 0) { %>
-            <% checkedValues.forEach(value => { %>
-                <li><%= value %></li>
-            <% }); %>
-        <% } else { %>
-            <p>No tags selected.</p>
-        <% } %>
-    </ul>
-    <a href="/">Go back</a>
+  </head>
+  <body>
+    <%- include('blocks/header') %>
+    <main class="main__">
+      <section class="card-quote">
+        <h1 class="title">Search Results</h1>
+        <%- include('blocks/tag_list') %>
+        <div class="quotes_list">
+          <% if (listEmpty) { %>
+          <p><%= listEmpty %></p>
+          <% } else if (listQuotesByTags && listQuotesByTags.length > 0) { %> <%
+          listQuotesByTags.forEach(quote => { %>
+          <div class="card_quote">
+            <div class="content_search">
+              <div class="right"><span class="quotation_marks up">"</span></div>
+              <span class="quote"><%= quote.quote %></span>
+              <div class="left">
+                <span class="quotation_marks down">"</span>
+              </div>
+            </div>
+            <div class="info_search">
+              <span>Author: <%= quote.author %></span>
+              <div class="tag_list">
+                <% if (quote.tags.length === 0 || quote.tags.includes(null)) {
+                %>
+                <span class="tag_element">No tags selected</span>
+                <% } else { %> <% quote.tags.forEach(tag => { %>
+                <span class="tag_element"><%= tag %></span>
+                <% }); %> <% } %>
+              </div>
+              <div
+                class="like"
+                onclick="likeQuote('<%= quote.id %>', 'likes-<%= quote.id %>')"
+              >
+                <img
+                  src="<%= likedQuotes.includes(quote.id) ? '/img/liked.svg' : '/img/unliked.svg' %>"
+                  id="likesImg-<%= quote.id %>"
+                  class="like"
+                  alt="like"
+                />
+                <span id="likes-<%= quote.id %>" class="likes"
+                  ><%= quote.likes %></span
+                >
+              </div>
+              <div class="info_icon">
+                <img
+                  class="info_icon"
+                  onclick="window.location.href='/quote/<%= quote.id %>'"
+                  src="/img/info.svg"
+                  alt="info"
+                />
+              </div>
+            </div>
+          </div>
+          <% }); %> <% } else { %>
+          <p>No quotes found.</p>
+          <% } %>
+        </div>
+      </section>
+    </main>
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const likedQuotes = getLikedQuotes();
+        likedQuotes.forEach((id) => {
+          const img = document.querySelector(`#likesImg-${id}`);
+          if (img) {
+            img.src = "/img/liked.svg";
+          }
+        });
+      });
     </script>
-</body>
+    <script src="/js/script.js"></script>
+  </body>
 </html>

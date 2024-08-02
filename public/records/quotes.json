@@ -1,42 +1,164 @@
 [
   {
     "id": "1",
-    "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-    "author": "Nelson Mandela",
-    "likes": "100011",
-    "likesForThisDay": "85",
-    "tags": ["Humor", "Phylosophy"]
+    "quote": "1",
+    "author": "1",
+    "likes": 6,
+    "tags": [
+      "Politics"
+    ],
+    "date": "2024-08-01T03:35:29.241Z"
   },
   {
     "id": "2",
-    "quote": "The gatest glory in living lies not in never falling, but in rising every time we fall.",
-    "author": "Nelson Mandela",
-    "likes": "100200",
-    "likesForThisDay": "85",
-    "tags": ["Humor", "Phylosophy"]
+    "quote": "2",
+    "author": "2",
+    "likes": 2,
+    "tags": [
+      "Philosophy"
+    ],
+    "date": "2024-08-01T03:36:34.070Z"
   },
   {
     "id": "3",
-    "quote": "The greest glory in living lies not in never falling, but in rising every time we fall.",
-    "author": "Nelson Mandela",
-    "likes": "0",
-    "likesForThisDay": "85",
-    "tags": ["Humor", "Phylosophy"]
+    "quote": "3",
+    "author": "3",
+    "likes": 2,
+    "tags": [
+      "Science"
+    ],
+    "date": "2024-08-01T03:36:40.962Z"
   },
   {
     "id": "4",
-    "quote": "he greatest glory in living lies not in never falling, but in rising every time we fall.",
-    "author": "Nelson Mandela",
-    "likes": "1200",
-    "likesForThisDay": "85",
-    "tags": ["Humor", "Phylosophy"]
+    "quote": "4",
+    "author": "4",
+    "likes": 1,
+    "tags": [
+      "Literature"
+    ],
+    "date": "2024-08-01T03:36:45.612Z"
   },
   {
     "id": "5",
-    "quote": "Th greatest glory in living lies not in never falling, but in rising every time we fall.",
-    "author": "Nelson Mandela",
-    "likes": "11000",
-    "likesForThisDay": "85",
-    "tags": ["Humor", "Phylosophy"]
+    "quote": "5",
+    "author": "5",
+    "likes": 5,
+    "tags": [
+      "Education"
+    ],
+    "date": "2024-08-01T03:36:52.908Z"
+  },
+  {
+    "id": "6",
+    "quote": "6",
+    "author": "6",
+    "likes": 1,
+    "tags": [
+      "Motivation"
+    ],
+    "date": "2024-08-01T03:37:00.661Z"
+  },
+  {
+    "id": "7",
+    "quote": "7",
+    "author": "7",
+    "likes": 2,
+    "tags": [
+      "History"
+    ],
+    "date": "2024-08-01T03:37:13.351Z"
+  },
+  {
+    "id": "8",
+    "quote": "8",
+    "author": "8",
+    "likes": 1,
+    "tags": [
+      "Art"
+    ],
+    "date": "2024-08-01T03:37:20.517Z"
+  },
+  {
+    "id": "9",
+    "quote": "9",
+    "author": "9",
+    "likes": 0,
+    "tags": [
+      "Religion"
+    ],
+    "date": "2024-08-01T03:37:25.565Z"
+  },
+  {
+    "id": "10",
+    "quote": "10",
+    "author": "10",
+    "likes": 2,
+    "tags": [
+      "Love_and_attitude"
+    ],
+    "date": "2024-08-01T03:37:33.346Z"
+  },
+  {
+    "id": "11",
+    "quote": "11",
+    "author": "11",
+    "likes": 3,
+    "tags": [
+      "Love_and_attitude"
+    ],
+    "date": "2024-08-01T03:37:52.316Z"
+  },
+  {
+    "id": "12",
+    "quote": "333",
+    "author": "333",
+    "likes": 2,
+    "tags": [
+      null
+    ],
+    "date": "2024-08-01T03:39:07.614Z"
+  },
+  {
+    "id": "13",
+    "quote": "111",
+    "author": "111",
+    "likes": 2,
+    "tags": [
+      null
+    ],
+    "date": "2024-08-01T03:49:12.444Z"
+  },
+  {
+    "id": "14",
+    "quote": "12",
+    "author": "12",
+    "likes": 1,
+    "tags": [
+      "Technology"
+    ],
+    "date": "2024-08-01T06:02:03.913Z"
+  },
+  {
+    "id": "15",
+    "quote": "se",
+    "author": "se",
+    "likes": 0,
+    "tags": [
+      "Motivation"
+    ],
+    "date": "2024-08-01T06:44:20.207Z"
+  },
+  {
+    "id": "16",
+    "quote": "222",
+    "author": "221",
+    "likes": 1,
+    "tags": [
+      "Philosophy",
+      "Wisdom",
+      "Technology"
+    ],
+    "date": "2024-08-02T09:24:37.776Z"
   }
 ]

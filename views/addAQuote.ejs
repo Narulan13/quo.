@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('blocks/head')%>
+    <title>Add A New Quote</title>
+  </head>
+  <body>
+    <%- include('blocks/header')%>
+    <main class="main__">
+      <section class="container_">
+        <div class="card-quote__content">
+          <h1 class="card-quote__title">Add A New Quote</h1>
+          <form class="add_form" action="/addAQuote" method="post">
+            <textarea name="quote" id="quote" placeholder="Please enter the quote here (without the quotation marks)."></textarea>
+            <textarea name="author" id="author" placeholder="Please enter the author's name here (if you don't have one or can't lead, then enter Anonymous)."></textarea>
+            <h3 class="card-quote__title_">Select tags</h3>
+            <div class="grid_tags tags">
+              <label class="tags_btn">
+                  <input type="checkbox" value="Philosophy" name="AddcheckedValues">
+                  <span>Philosophy</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Science" name="AddcheckedValues">
+                  <span>Science</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Literature" name="AddcheckedValues">
+                  <span>Literature</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Education" name="AddcheckedValues">
+                  <span>Education</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Motivation" name="AddcheckedValues">
+                  <span>Motivation</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Politics" name="AddcheckedValues">
+                  <span>Politics</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="History" name="AddcheckedValues">
+                  <span>History</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Art" name="AddcheckedValues">
+                  <span>Art</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Religion" name="AddcheckedValues">
+                  <span>Religion</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Love_and_attitude" name="AddcheckedValues">
+                  <span>Love and attitude</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Humor" name="AddcheckedValues">
+                  <span>Humor</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox"  value="Wisdom" name="AddcheckedValues">
+                  <span>Wisdom</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Psychology" name="AddcheckedValues">
+                  <span>Psychology</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Technology" name="AddcheckedValues">
+                  <span>Technology</span>
+              </label>
+              <label class="tags_btn">
+                  <input type="checkbox" value="Health_and_well-being" name="AddcheckedValues">
+                  <span>Health and well-being</span>
+              </label>
+            </div>
+            <button class="btnAdd" type="submit">Add</button>
+          </form>
+        </div>
+        <div class="card-quote__img">
+          <img src="/img/addImg.png" id="img_add" alt="aa">
+        </div>
+      </section>
+    </main>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
