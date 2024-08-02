@@ -90,7 +90,7 @@ function setTheme(theme) {
   const modeIcon = document.getElementById("mode_icon");
   const imgAdd = document.getElementById("img_add");
   const info = document.getElementsByClassName("info_icon");
-  const likeImgs = document.querySelectorAll("[id^=likesImg-]"); // Select all like images
+  const likeImgs = document.querySelectorAll("[id^=likesImg-]");
 
   if (theme === "light") {
     root.style.setProperty("--textColor", "#333333");
@@ -117,9 +117,8 @@ function setTheme(theme) {
 
     localStorage.setItem("theme", "light");
 
-    // Update all like images to match the new theme
     likeImgs.forEach(img => {
-      const id = img.id.split("-")[1]; // Extract the id part
+      const id = img.id.split("-")[1];
       const hasLiked = getLikedQuotes().includes(id);
       setLikeTheme(img, hasLiked);
     });
@@ -148,8 +147,6 @@ function setTheme(theme) {
     });
 
     localStorage.setItem("theme", "dark");
-
-    // Update all like images to match the new theme
     likeImgs.forEach(img => {
       const id = img.id.split("-")[1]; // Extract the id part
       const hasLiked = getLikedQuotes().includes(id);
